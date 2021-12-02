@@ -6,9 +6,7 @@
   "scripts": {
     "test": "mocha",
     "server:start": "node server/index.js",
-    "client:start": "npm --prefix client start",
-    "db:start": "node server/database/index.js",
-    "start": "concurrently \"npm run server:start\" \"npm run client:start\""
+    "db:start": "node server/database/index.js"
   },
   "repository": {
     "type": "git",
