@@ -1,0 +1,34 @@
+{
+  "name": "backend-fetch-rewards",
+  "version": "1.0.0",
+  "description": "Fetch Rewards Coding Exercise - Backend Software Engineering",
+  "main": "server/index.js",
+  "scripts": {
+    "test": "mocha",
+    "server:start": "node server/index.js",
+    "client:start": "npm --prefix client start",
+    "db:start": "node server/database/index.js",
+    "start": "concurrently \"npm run server:start\" \"npm run client:start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnshivers3/backend-fetch-rewards.git"
+  },
+  "author": "John Shivers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnshivers3/backend-fetch-rewards/issues"
+  },
+  "homepage": "https://github.com/johnshivers3/backend-fetch-rewards#readme",
+  "engines": {
+    "npm": ">=6.0.0",
+    "node": ">=12.0.0"
+  },
+  "dependencies": {
+    "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mocha": "^9.1.3",
+    "sqlite3": "^5.0.2"
+  }
+}
