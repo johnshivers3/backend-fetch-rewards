@@ -1,0 +1,31 @@
+html
+  head
+    title= title
+  body
+    h1= message
+
+    form(action='/' method='POST')
+
+      div
+        label First name
+        input(type='text' name='firstName' required)
+      div
+        label Last name
+        input(type='text' name='lastName' required)
+      div
+        label Age
+        input(type='number' name='age')
+      div
+        label Biography
+        textarea(name='biography')
+      div
+        label Hair Color
+
+      button(type='submit') Create Person
+
+      button(type='button' onclick='')
+        a( href='/api/get-balances' ) Get All Balances
+
+
+      div
+        p= data
