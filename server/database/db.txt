@@ -1,0 +1,75 @@
+--
+-- File generated with SQLiteStudio v3.3.3 on Fri Dec 3 00:03:22 2021
+--
+-- Text encoding used: UTF-8
+--
+PRAGMA foreign_keys = off;
+BEGIN TRANSACTION;
+
+-- Table: fetch_rewards
+DROP TABLE IF EXISTS fetch_rewards;
+
+CREATE TABLE fetch_rewards (
+    payer     TEXT     NOT NULL,
+    points    INTEGER  NOT NULL,
+    timestamp DATETIME NOT NULL
+);
+
+INSERT INTO fetch_rewards (
+                              payer,
+                              points,
+                              timestamp
+                          )
+                          VALUES (
+                              'UNILEVER',
+                              200,
+                              '2020-10-31T11:00:00Z'
+                          );
+
+INSERT INTO fetch_rewards (
+                              payer,
+                              points,
+                              timestamp
+                          )
+                          VALUES (
+                              'DANNON',
+-                             200,
+                              '2020-10-31T15:00:00Z'
+                          );
+
+INSERT INTO fetch_rewards (
+                              payer,
+                              points,
+                              timestamp
+                          )
+                          VALUES (
+                              'MILLER COORS',
+                              10000,
+                              '2020-11-01T14:00:00Z'
+                          );
+
+INSERT INTO fetch_rewards (
+                              payer,
+                              points,
+                              timestamp
+                          )
+                          VALUES (
+                              'DANNON',
+                              300,
+                              '2020-10-31T10:00:00Z'
+                          );
+
+INSERT INTO fetch_rewards (
+                              payer,
+                              points,
+                              timestamp
+                          )
+                          VALUES (
+                              'DANNON',
+                              1000,
+                              '2020-11-02T14:00:00Z'
+                          );
+
+
+COMMIT TRANSACTION;
+PRAGMA foreign_keys = on;
