@@ -19,12 +19,7 @@ const db = require("../server/database/index");
 
 afterEach(function () {
   // close the database connection
-  db.close((err) => {
-    if (err) {
-      return console.error(err.message);
-    }
-    console.log("Close the database connection.");
-  });
+
 });
 
 describe("Array", function () {

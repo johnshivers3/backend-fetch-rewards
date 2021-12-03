@@ -1,34 +1,8 @@
 const sqlite3 = require("sqlite3").verbose();
 
-let transaction1 = {
-  payer: "DANNON",
-  points: 1000,
-  timestamp: "2020-11-02T14:00:00Z",
-};
-let transaction2 = {
-  payer: "UNILEVER",
-  points: 200,
-  timestamp: "2020-10-31T11:00:00Z",
-};
-let transaction3 = {
-  payer: "DANNON",
-  points: -200,
-  timestamp: "2020-10-31T15:00:00Z",
-};
-let transaction4 = {
-  payer: "MILLER COORS",
-  points: 10000,
-  timestamp: "2020-11-01T14:00:00Z",
-};
-let transaction5 = {
-  payer: "DANNON",
-  points: 300,
-  timestamp: "2020-10-31T10:00:00Z",
-};
-
 // open database in memory
 let db = new sqlite3.Database(
-  "./transaction_ledger.db",
+  "./server/database/transaction_ledger.db",
   sqlite3.OPEN_READWRITE,
   (err) => {
     if (err) {
@@ -37,8 +11,6 @@ let db = new sqlite3.Database(
     console.log("Connected to the SQlite database.");
   }
 );
-
-
 
 db.serialize(function () {
   db.run(`DROP TABLE IF EXISTS payer_subs`);
@@ -103,6 +75,13 @@ INSERT INTO fetch_rewards (
       console.log(row);
     }
   );
+});
+
+db.close((err) => {
+  if (err) {
+    return console.error(err.message);
+  }
+  console.log("Close the database connection.");
 });
 
 module.exports = db;
